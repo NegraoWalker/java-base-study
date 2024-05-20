@@ -91,4 +91,12 @@ public class Aluno {
     public double getMediaNota() {
         return (nota1 + nota2 + nota3)/3;
     }
+    public boolean getAlunoAprovado() {
+        double media = this.getMediaNota();
+        if (media >= 7.00) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
