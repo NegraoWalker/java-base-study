@@ -1,27 +1,26 @@
 package examples;
 
+import java.util.Objects;
+
 public class Aluno {
     private String nome;
     private int idade;
     private String dataNascimento;
     private String cpf;
     private String dataMatricula;
-    private double nota1;
-    private double nota2;
-    private double nota3;
+
+    private Disciplina disciplina = new Disciplina();
 
     public Aluno() {
     }
 
-    public Aluno(String nome, int idade, String dataNascimento, String cpf, String dataMatricula, double nota1, double nota2, double nota3) {
+    public Aluno(String nome, int idade, String dataNascimento, String cpf, String dataMatricula, Disciplina disciplina) {
         this.nome = nome;
         this.idade = idade;
         this.dataNascimento = dataNascimento;
         this.cpf = cpf;
         this.dataMatricula = dataMatricula;
-        this.nota1 = nota1;
-        this.nota2 = nota2;
-        this.nota3 = nota3;
+        this.disciplina = disciplina;
     }
 
     public String getNome() {
@@ -64,32 +63,30 @@ public class Aluno {
         this.dataMatricula = dataMatricula;
     }
 
-    public double getNota1() {
-        return nota1;
+    public Disciplina getDisciplina() {
+        return disciplina;
     }
 
-    public void setNota1(double nota1) {
-        this.nota1 = nota1;
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
     }
 
-    public double getNota2() {
-        return nota2;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Aluno aluno = (Aluno) o;
+        return idade == aluno.idade && Objects.equals(nome, aluno.nome) && Objects.equals(dataNascimento, aluno.dataNascimento) && Objects.equals(cpf, aluno.cpf) && Objects.equals(dataMatricula, aluno.dataMatricula) && Objects.equals(disciplina, aluno.disciplina);
     }
 
-    public void setNota2(double nota2) {
-        this.nota2 = nota2;
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, idade, dataNascimento, cpf, dataMatricula, disciplina);
     }
 
-    public double getNota3() {
-        return nota3;
-    }
-
-    public void setNota3(double nota3) {
-        this.nota3 = nota3;
-    }
-
+    //Métodos personalizados:
     public double getMediaNota() {
-        return (nota1 + nota2 + nota3)/3;
+        return (disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3()) / 3;
     }
     public boolean getAlunoAprovado() {
         double media = this.getMediaNota();
