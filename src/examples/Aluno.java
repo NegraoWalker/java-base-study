@@ -1,5 +1,7 @@
 package examples;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Aluno {
@@ -9,19 +11,7 @@ public class Aluno {
     private String cpf;
     private String dataMatricula;
 
-    private Disciplina disciplina = new Disciplina();
-
-    public Aluno() {
-    }
-
-    public Aluno(String nome, int idade, String dataNascimento, String cpf, String dataMatricula, Disciplina disciplina) {
-        this.nome = nome;
-        this.idade = idade;
-        this.dataNascimento = dataNascimento;
-        this.cpf = cpf;
-        this.dataMatricula = dataMatricula;
-        this.disciplina = disciplina;
-    }
+    private List<Disciplina> listaDisciplinas = new ArrayList<>();
 
     public String getNome() {
         return nome;
@@ -63,12 +53,12 @@ public class Aluno {
         this.dataMatricula = dataMatricula;
     }
 
-    public Disciplina getDisciplina() {
-        return disciplina;
+    public List<Disciplina> getListaDisciplinas() {
+        return listaDisciplinas;
     }
 
-    public void setDisciplina(Disciplina disciplina) {
-        this.disciplina = disciplina;
+    public void setListaDisciplinas(List<Disciplina> listaDisciplinas) {
+        this.listaDisciplinas = listaDisciplinas;
     }
 
     @Override
@@ -76,18 +66,34 @@ public class Aluno {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Aluno aluno = (Aluno) o;
-        return idade == aluno.idade && Objects.equals(nome, aluno.nome) && Objects.equals(dataNascimento, aluno.dataNascimento) && Objects.equals(cpf, aluno.cpf) && Objects.equals(dataMatricula, aluno.dataMatricula) && Objects.equals(disciplina, aluno.disciplina);
+        return idade == aluno.idade && Objects.equals(nome, aluno.nome) && Objects.equals(dataNascimento, aluno.dataNascimento) && Objects.equals(cpf, aluno.cpf) && Objects.equals(dataMatricula, aluno.dataMatricula) && Objects.equals(listaDisciplinas, aluno.listaDisciplinas);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, idade, dataNascimento, cpf, dataMatricula, disciplina);
+        return Objects.hash(nome, idade, dataNascimento, cpf, dataMatricula, listaDisciplinas);
     }
 
-    //Métodos personalizados:
-    public double getMediaNota() {
-        return (disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3()) / 3;
+    @Override
+    public String toString() {
+        return "Aluno{" +
+                "nome='" + nome + '\'' +
+                ", idade=" + idade +
+                ", dataNascimento='" + dataNascimento + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", dataMatricula='" + dataMatricula + '\'' +
+                ", listaDisciplinas=" + listaDisciplinas +
+                '}';
     }
+
+    public double getMediaNota() {
+        double somaNotas = 0.00;
+        for (Disciplina disciplina: listaDisciplinas) {
+            somaNotas+= disciplina.getNota();
+        }
+        return somaNotas / listaDisciplinas.size();
+    }
+
     public boolean getAlunoAprovado() {
         double media = this.getMediaNota();
         if (media >= 7.00) {

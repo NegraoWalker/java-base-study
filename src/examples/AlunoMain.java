@@ -58,36 +58,99 @@ public class AlunoMain {
 //        System.out.println(aluno2.hashCode());
 //        System.out.println(aluno3.hashCode());
 
+//
+//        Aluno aluno4 = new Aluno();
+//
+//        String nome = JOptionPane.showInputDialog("Informe o nome do aluno: ");
+//        String idade = JOptionPane.showInputDialog("Informe a idade do aluno: ");
+//        String dataNascimento = JOptionPane.showInputDialog("Informe a data de nascimento do aluno: ");
+//        String cpf = JOptionPane.showInputDialog("Informe o CPF do aluno: ");
+//        String dataMatricula = JOptionPane.showInputDialog("Informe a data de matrícula do aluno: ");
+//        String disciplina1 = JOptionPane.showInputDialog("Informe a primeira disciplina do aluno: ");
+//        String nota1Aluno = JOptionPane.showInputDialog("Informe a primeira nota do aluno: ");
+//        String disciplina2= JOptionPane.showInputDialog("Informe a segunda disciplina do aluno: ");
+//        String nota2Aluno = JOptionPane.showInputDialog("Informe a segunda nota do aluno: ");
+//        String disciplina3 = JOptionPane.showInputDialog("Informe a terceira disciplina do aluno: ");
+//        String nota3Aluno = JOptionPane.showInputDialog("Informe a terceira nota do aluno: ");
+//
+//
+//        aluno4.setNome(nome);
+//        aluno4.setIdade(Integer.parseInt(idade));
+//        aluno4.setDataNascimento(dataNascimento);
+//        aluno4.setCpf(cpf);
+//        aluno4.setDataMatricula(dataMatricula);
+//        aluno4.getDisciplina().setDisciplina1(disciplina1);
+//        aluno4.getDisciplina().setNota1(Double.parseDouble(nota1Aluno));
+//        aluno4.getDisciplina().setDisciplina2(disciplina2);
+//        aluno4.getDisciplina().setNota2(Double.parseDouble(nota2Aluno));
+//        aluno4.getDisciplina().setDisciplina3(disciplina3);
+//        aluno4.getDisciplina().setNota3(Double.parseDouble(nota3Aluno));
+//
+//        System.out.println(aluno4.toString());
 
-        Aluno aluno4 = new Aluno();
+//        String nome = JOptionPane.showInputDialog("Informe o nome do aluno: ");
+//        String idade = JOptionPane.showInputDialog("Informe a idade do aluno: ");
+//        String dataNascimento = JOptionPane.showInputDialog("Informe a data de nascimento do aluno: ");
+//        String cpf = JOptionPane.showInputDialog("Informe o CPF do aluno: ");
+//        String dataMatricula = JOptionPane.showInputDialog("Informe a data de matrícula do aluno: ");
+//        String nomeDisciplina1 = JOptionPane.showInputDialog("Informe a primeira disciplina do aluno: ");
+//        String nota1Aluno = JOptionPane.showInputDialog("Informe a primeira nota do aluno: ");
+//        String nomeDisciplina2 = JOptionPane.showInputDialog("Informe a segunda disciplina do aluno: ");
+//        String nota2Aluno = JOptionPane.showInputDialog("Informe a segunda nota do aluno: ");
+//        String nomeDisciplina3 = JOptionPane.showInputDialog("Informe a terceira disciplina do aluno: ");
+//        String nota3Aluno = JOptionPane.showInputDialog("Informe a terceira nota do aluno: ");
+//
+//
+//
+//        Aluno aluno5 = new Aluno();
+//        Disciplina disciplina1 = new Disciplina();
+//        Disciplina disciplina2 = new Disciplina();
+//        Disciplina disciplina3 = new Disciplina();
+//
+//        aluno5.setNome(nome);
+//        aluno5.setIdade(Integer.parseInt(idade));
+//        aluno5.setDataNascimento(dataNascimento);
+//        aluno5.setCpf(cpf);
+//        aluno5.setDataMatricula(dataMatricula);
+//        disciplina1.setNomeDisciplina(nomeDisciplina1);
+//        disciplina1.setNota(Double.parseDouble(nota1Aluno));
+//        aluno5.getListaDisciplinas().add(disciplina1);
+//        disciplina2.setNomeDisciplina(nomeDisciplina1);
+//        disciplina2.setNota(Double.parseDouble(nota2Aluno));
+//        aluno5.getListaDisciplinas().add(disciplina2);
+//        disciplina3.setNomeDisciplina(nomeDisciplina1);
+//        disciplina3.setNota(Double.parseDouble(nota3Aluno));
+//        aluno5.getListaDisciplinas().add(disciplina3);
+//
+//        System.out.println(aluno5.toString());
+//        System.out.println(aluno5.getAlunoAprovado());
 
+// -------------------------------------Aluno 6-------------------------------------------------------------------------------
         String nome = JOptionPane.showInputDialog("Informe o nome do aluno: ");
         String idade = JOptionPane.showInputDialog("Informe a idade do aluno: ");
         String dataNascimento = JOptionPane.showInputDialog("Informe a data de nascimento do aluno: ");
         String cpf = JOptionPane.showInputDialog("Informe o CPF do aluno: ");
         String dataMatricula = JOptionPane.showInputDialog("Informe a data de matrícula do aluno: ");
-        String disciplina1 = JOptionPane.showInputDialog("Informe a primeira disciplina do aluno: ");
-        String nota1Aluno = JOptionPane.showInputDialog("Informe a primeira nota do aluno: ");
-        String disciplina2= JOptionPane.showInputDialog("Informe a segunda disciplina do aluno: ");
-        String nota2Aluno = JOptionPane.showInputDialog("Informe a segunda nota do aluno: ");
-        String disciplina3 = JOptionPane.showInputDialog("Informe a terceira disciplina do aluno: ");
-        String nota3Aluno = JOptionPane.showInputDialog("Informe a terceira nota do aluno: ");
 
+        Aluno aluno6 = new Aluno();
 
-        aluno4.setNome(nome);
-        aluno4.setIdade(Integer.parseInt(idade));
-        aluno4.setDataNascimento(dataNascimento);
-        aluno4.setCpf(cpf);
-        aluno4.setDataMatricula(dataMatricula);
-        aluno4.getDisciplina().setDisciplina1(disciplina1);
-        aluno4.getDisciplina().setNota1(Double.parseDouble(nota1Aluno));
-        aluno4.getDisciplina().setDisciplina2(disciplina2);
-        aluno4.getDisciplina().setNota2(Double.parseDouble(nota2Aluno));
-        aluno4.getDisciplina().setDisciplina3(disciplina3);
-        aluno4.getDisciplina().setNota3(Double.parseDouble(nota3Aluno));
+        aluno6.setNome(nome);
+        aluno6.setIdade(Integer.parseInt(idade));
+        aluno6.setDataNascimento(dataNascimento);
+        aluno6.setCpf(cpf);
+        aluno6.setDataMatricula(dataMatricula);
 
-        System.out.println(aluno4.toString());
+        for (int i = 1; i < 4; i++) {
+            String nomeDisciplina = JOptionPane.showInputDialog("Informe o nome da disciplina " + i + ":");
+            String notaAluno = JOptionPane.showInputDialog("Informe o valor da nota " + i + ":");
+            Disciplina disciplina = new Disciplina();
+            disciplina.setNomeDisciplina(nomeDisciplina);
+            disciplina.setNota(Double.parseDouble(notaAluno));
+            aluno6.getListaDisciplinas().add(disciplina);
+        }
 
+        System.out.println(aluno6.toString());
+        System.out.println(aluno6.getAlunoAprovado());
 
     }
 }
