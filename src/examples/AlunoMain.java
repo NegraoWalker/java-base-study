@@ -149,6 +149,13 @@ public class AlunoMain {
             aluno6.getListaDisciplinas().add(disciplina);
         }
 
+        int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover algum disciplina?");
+        if (escolha == 0) {
+            String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina você deseja remover? ");
+            aluno6.getListaDisciplinas().remove(Integer.parseInt(disciplinaRemover) - 1);
+        }
+
+
         System.out.println(aluno6.toString());
         System.out.println(aluno6.getAlunoAprovado());
 
