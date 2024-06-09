@@ -2,48 +2,21 @@ package examples;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-public class Aluno {
-    private String nome;
-    private int idade;
-    private String dataNascimento;
-    private String cpf;
+public class Aluno extends Pessoa{
     private String dataMatricula;
-
     private List<Disciplina> listaDisciplinas = new ArrayList<>();
 
-    public String getNome() {
-        return nome;
+
+    public Aluno() {
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public Aluno(String nome, int idade, String dataNascimento, String cpf, String dataMatricula, String dataMatricula1, List<Disciplina> listaDisciplinas) {
+        super(nome, idade, dataNascimento, cpf, dataMatricula);
+        this.dataMatricula = dataMatricula1;
+        this.listaDisciplinas = listaDisciplinas;
     }
 
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public String getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(String dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
 
     public String getDataMatricula() {
         return dataMatricula;
@@ -62,27 +35,14 @@ public class Aluno {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Aluno aluno = (Aluno) o;
-        return idade == aluno.idade && Objects.equals(nome, aluno.nome) && Objects.equals(dataNascimento, aluno.dataNascimento) && Objects.equals(cpf, aluno.cpf) && Objects.equals(dataMatricula, aluno.dataMatricula) && Objects.equals(listaDisciplinas, aluno.listaDisciplinas);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(nome, idade, dataNascimento, cpf, dataMatricula, listaDisciplinas);
-    }
-
-    @Override
     public String toString() {
         return "Aluno{" +
-                "nome='" + nome + '\'' +
-                ", idade=" + idade +
-                ", dataNascimento='" + dataNascimento + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", dataMatricula='" + dataMatricula + '\'' +
+                "dataMatricula='" + dataMatricula + '\'' +
                 ", listaDisciplinas=" + listaDisciplinas +
+                ", nome=" + getNome() +
+                ", idade=" + getIdade() +
+                ", data de nascimento=" + getDataNascimento() +
+                ", cpf=" + getCpf() +
                 '}';
     }
 
